@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045DBB511B0BBEE200564F76 /* BallCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBB501B0BBEE200564F76 /* BallCountView.swift */; };
+		045DBB531B0BBEF600564F76 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBB521B0BBEF600564F76 /* BallView.swift */; };
+		045DBB551B0BBF0500564F76 /* BrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBB541B0BBF0500564F76 /* BrickView.swift */; };
+		045DBB571B0BBF1100564F76 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DBB561B0BBF1100564F76 /* PaddleView.swift */; };
+		045DBB591B0BC5E100564F76 /* 11344953254_071dd28a8d_o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 045DBB581B0BC5E100564F76 /* 11344953254_071dd28a8d_o.jpg */; };
 		04942C201B0B6CF200742B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04942C1F1B0B6CF200742B89 /* AppDelegate.swift */; };
 		04942C221B0B6CF200742B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04942C211B0B6CF200742B89 /* ViewController.swift */; };
 		04942C251B0B6CF200742B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04942C231B0B6CF200742B89 /* Main.storyboard */; };
@@ -26,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045DBB501B0BBEE200564F76 /* BallCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountView.swift; sourceTree = "<group>"; };
+		045DBB521B0BBEF600564F76 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		045DBB541B0BBF0500564F76 /* BrickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickView.swift; sourceTree = "<group>"; };
+		045DBB561B0BBF1100564F76 /* PaddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddleView.swift; sourceTree = "<group>"; };
+		045DBB581B0BC5E100564F76 /* 11344953254_071dd28a8d_o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11344953254_071dd28a8d_o.jpg; path = "../../../Desktop/App Pics/11344953254_071dd28a8d_o.jpg"; sourceTree = "<group>"; };
 		04942C1A1B0B6CF200742B89 /* Smash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04942C1E1B0B6CF200742B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04942C1F1B0B6CF200742B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				04942C211B0B6CF200742B89 /* ViewController.swift */,
+				045DBB501B0BBEE200564F76 /* BallCountView.swift */,
+				045DBB561B0BBF1100564F76 /* PaddleView.swift */,
+				045DBB541B0BBF0500564F76 /* BrickView.swift */,
+				045DBB521B0BBEF600564F76 /* BallView.swift */,
 				04942C231B0B6CF200742B89 /* Main.storyboard */,
 				04942C1D1B0B6CF200742B89 /* Supporting Files */,
 			);
@@ -88,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				04942C1F1B0B6CF200742B89 /* AppDelegate.swift */,
+				045DBB581B0BC5E100564F76 /* 11344953254_071dd28a8d_o.jpg */,
 				04942C261B0B6CF200742B89 /* Images.xcassets */,
 				04942C281B0B6CF200742B89 /* LaunchScreen.xib */,
 				04942C1E1B0B6CF200742B89 /* Info.plist */,
@@ -192,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045DBB591B0BC5E100564F76 /* 11344953254_071dd28a8d_o.jpg in Resources */,
 				04942C251B0B6CF200742B89 /* Main.storyboard in Resources */,
 				04942C2A1B0B6CF200742B89 /* LaunchScreen.xib in Resources */,
 				04942C271B0B6CF200742B89 /* Images.xcassets in Resources */,
@@ -213,7 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04942C221B0B6CF200742B89 /* ViewController.swift in Sources */,
+				045DBB511B0BBEE200564F76 /* BallCountView.swift in Sources */,
+				045DBB551B0BBF0500564F76 /* BrickView.swift in Sources */,
 				04942C201B0B6CF200742B89 /* AppDelegate.swift in Sources */,
+				045DBB571B0BBF1100564F76 /* PaddleView.swift in Sources */,
+				045DBB531B0BBEF600564F76 /* BallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
