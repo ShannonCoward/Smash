@@ -77,11 +77,8 @@
 		04942C1C1B0B6CF200742B89 /* Smash */ = {
 			isa = PBXGroup;
 			children = (
-				04942C1F1B0B6CF200742B89 /* AppDelegate.swift */,
 				04942C211B0B6CF200742B89 /* ViewController.swift */,
 				04942C231B0B6CF200742B89 /* Main.storyboard */,
-				04942C261B0B6CF200742B89 /* Images.xcassets */,
-				04942C281B0B6CF200742B89 /* LaunchScreen.xib */,
 				04942C1D1B0B6CF200742B89 /* Supporting Files */,
 			);
 			path = Smash;
@@ -90,6 +87,9 @@
 		04942C1D1B0B6CF200742B89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04942C1F1B0B6CF200742B89 /* AppDelegate.swift */,
+				04942C261B0B6CF200742B89 /* Images.xcassets */,
+				04942C281B0B6CF200742B89 /* LaunchScreen.xib */,
 				04942C1E1B0B6CF200742B89 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -409,6 +409,7 @@
 				04942C3B1B0B6CF200742B89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04942C3C1B0B6CF200742B89 /* Build configuration list for PBXNativeTarget "SmashTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				04942C3E1B0B6CF200742B89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
