@@ -29,7 +29,7 @@ class BrickView: UIView {
         
         UIColor(white: 0.0, alpha: 0.3 * CGFloat(health) + 0.1).set()
         
-        CGContextFillEllipseInRect(context, rect)
+        CGContextFillRect(context, rect)
         
     }
     

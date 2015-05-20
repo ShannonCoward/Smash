@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollisionBehaviorDelegate {
+class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var headerView: UIView!
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var paddleBehavior = UIDynamicItemBehavior()
     
     var balls: [UIView] = []
-    var bricks: [UIView] = []
+    var bricks: [BrickView] = []
     
     override func viewDidAppear(animated: Bool) {
      super.viewDidAppear(animated)
@@ -135,33 +135,58 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
             if brick == item1 as! UIView || brick == item2 as! UIView {
             
-                gravityBehavior.addItem(brick)
-                
-                bricks.removeAtIndex(b)
-                
-                collisionBehavior.removeItem(brick)
-                
-                var scoreLabel = UILabel(frame: brick.frame)
-                scoreLabel.text = "+100!"
-                scoreLabel.textAlignment = .Center
-                gameView.addSubview(scoreLabel)
-                
-                currentScore += 100
-                
-                
-                
-                UIView.animateWithDuration(0.9, animations: { () -> Void in
+                if brick.health > 1 {
                     
-                    scoreLabel.alpha = 0
-                    brick.alpha = 0
+                    //reduce health
+                    brick.health--
+                
+                } else {
+                
+                    //remove brick
+                    gravityBehavior.addItem(brick)
                     
-                }, completion: { (finished) -> Void in
+                    bricks.removeAtIndex(b)
                     
-                    scoreLabel.removeFromSuperview()
-                    brick.removeFromSuperview()
+                    collisionBehavior.removeItem(brick)
+                    
+                    var scoreLabel = UILabel(frame: brick.frame)
+                    scoreLabel.text = "+\(brick.points)"
+                    scoreLabel.textAlignment = .Center
+                    gameView.addSubview(scoreLabel)
+                    
+                    currentScore += brick.points 
                     
                     
-                })
+                    
+                    UIView.animateWithDuration(0.9, animations: { () -> Void in
+                        
+                        scoreLabel.alpha = 0
+                        brick.alpha = 0
+                        
+                        }, completion: { (finished) -> Void in
+                            
+                            scoreLabel.removeFromSuperview()
+                            brick.removeFromSuperview()
+                            
+                            
+                    })
+                    
+                    if bricks.count == 0 {
+                    
+                     //level beaten
+                    
+                        //move this to when you hit play next level
+                        GameData.mainData().currentLevel++
+                        
+                        if let levelVC = storyboard?.instantiateViewControllerWithIdentifier("LevelVC") as? LevelViewController {
+                        
+                            navigationController?.viewControllers = [levelVC]
+                        
+                        }
+                    
+                    }
+                
+                }
                 
             }
         
@@ -269,25 +294,29 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func createBricks() {
         
-        let rows = 3
-        let cols = 8
+        let level = GameData.mainData().getCurrentLevelBricks()
         
         let padding: CGFloat = 10
         
-        for r in 0..<rows {
+        for r in 0..<level.count {
             
-            for c in 0..<cols {
+            let row = level[r]
             
-              let brickWidth = (gameView.frame.width - (padding * CGFloat(cols + 1))) / CGFloat(cols)
+            for c in 0..<row.count {
+    
+                if row[c] == 0 { continue } //<=== key word for loops
+            
+              let brickWidth = (gameView.frame.width - (padding * CGFloat(row.count + 1))) / CGFloat(row.count)
                 
                 let brickHeight: CGFloat = 30
                 
                 let brickX = (CGFloat(c) * (brickWidth + padding)) + padding
                 let brickY = (CGFloat(r) * (brickHeight + padding)) + padding
                 
-                var brick = UIView(frame: CGRectMake(brickX, brickY, brickWidth, brickHeight))
+                var brick = BrickView(frame: CGRectMake(brickX, brickY, brickWidth, brickHeight))
                 
-                brick.backgroundColor = UIColor.redColor()
+                brick.backgroundColor = UIColor.clearColor()
+                brick.health = row[c]
                 
                 gameView.addSubview(brick)
                 bricks.append(brick)
