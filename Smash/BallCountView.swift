@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BallCountView: UIView {
+@IBDesignable class BallCountView: UIView {
     
-    var ballsLeft = 3 {
+    @IBInspectable var ballsLeft: Int = 3 {
         
         didSet {
             
@@ -20,6 +20,7 @@ class BallCountView: UIView {
     
     }
 
+    @IBInspectable var padding: CGFloat = 10
   
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -28,12 +29,20 @@ class BallCountView: UIView {
         
         var context = UIGraphicsGetCurrentContext()
         
-        let height = 0
+        let height = rect.height
+        let width = rect.height
+        
+//        let padding: CGFloat = 10
+        
         
         for i in 0..<ballsLeft {
         
+                let x = CGFloat(i) * (width + padding)
+                let y: CGFloat = 0
             
+//            UIColor.whiteColor().set()
             
+            CGContextFillEllipseInRect(context, CGRectMake(x, y, width, height))
         
         }
         

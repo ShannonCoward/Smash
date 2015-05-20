@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,18 +19,54 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-dE-JPT">
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqt-wp-VIB" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="12" width="120" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="DdK-la-cbS"/>
+                                            <constraint firstAttribute="width" constant="120" id="wCo-2r-2up"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpT-RI-NOz">
+                                        <rect key="frame" x="562" y="12" width="115" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="H1A-r5-Oe3"/>
+                                            <constraint firstAttribute="width" constant="115" id="WZv-mx-k7X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-JE-etg">
+                                        <rect key="frame" x="270" y="11" width="160" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="hAn-T5-C9k"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="swp-h3-sCB"/>
+                                            <constraint firstAttribute="width" constant="160" id="thE-zW-nKX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iqt-wp-VIB" secondAttribute="trailing" constant="572" id="2xC-tJ-6Ax"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="topMargin" constant="4" id="6wD-VK-Vz2"/>
+                                    <constraint firstAttribute="trailing" secondItem="TpT-RI-NOz" secondAttribute="trailing" constant="23" id="CaQ-LN-hf1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iqt-wp-VIB" secondAttribute="bottom" constant="12" id="DMI-DM-2Ui"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vb0-dE-JPT" secondAttribute="leading" constant="8" id="EgX-Vz-Z1W"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="12" id="FHP-Gd-Ghd"/>
+                                    <constraint firstAttribute="centerX" secondItem="ISh-JE-etg" secondAttribute="centerX" id="KeF-72-9ak"/>
+                                    <constraint firstItem="TpT-RI-NOz" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="12" id="Pfz-bX-w58"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="leading" secondItem="Vb0-dE-JPT" secondAttribute="leading" constant="8" id="Pzc-4X-3BG"/>
+                                    <constraint firstItem="ISh-JE-etg" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="11" id="geL-HM-iec"/>
                                     <constraint firstAttribute="height" constant="40" id="xQ8-Sx-eZn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-L7-jKr">
                                 <rect key="frame" x="0.0" y="40" width="700" height="360"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11344953254_071dd28a8d_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wdc-SB-XZy">
-                                        <rect key="frame" x="-12" y="-4" width="712" height="368"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES"/>
@@ -50,15 +87,67 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="700" height="400"/>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="TpT-RI-NOz" id="asN-dk-ViF"/>
                         <outlet property="gameView" destination="vcg-L7-jKr" id="Sdn-au-1gL"/>
+                        <outlet property="headerView" destination="Vb0-dE-JPT" id="12d-RS-vEw"/>
+                        <outlet property="livesView" destination="Iqt-wp-VIB" id="8J2-2k-ROT"/>
+                        <outlet property="topScoreLabel" destination="ISh-JE-etg" id="Y8S-ga-GE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="83"/>
+            <point key="canvasLocation" x="399" y="68"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0pt-el-ky2">
+            <objects>
+                <viewController id="odf-Ap-da8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qw-Bn-dVo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Opo-nd-PgP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g1q-26-uEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRd-jJ-J45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7kW-eD-mQc">
+            <objects>
+                <viewController id="wNZ-Hu-gbj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HAs-iN-yTK"/>
+                        <viewControllerLayoutGuide type="bottom" id="jPz-7Q-qd9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Izp-Y9-ZlT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2b-ba-Pdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DlM-bO-cA0">
+            <objects>
+                <viewController id="QqJ-wG-NU0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VGX-tE-Dl1"/>
+                        <viewControllerLayoutGuide type="bottom" id="aWy-Kk-ofj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ejk-vx-AcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNV-5O-w3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="11344953254_071dd28a8d_o.jpg" width="640" height="640"/>
-    </resources>
 </document>
