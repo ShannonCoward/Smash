@@ -315,7 +315,7 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                 
                 var brick = BrickView(frame: CGRectMake(brickX, brickY, brickWidth, brickHeight))
                 
-                brick.backgroundColor = UIColor.clearColor()
+                brick.backgroundColor = UIColor.redColor()
                 brick.health = row[c]
                 
                 gameView.addSubview(brick)
