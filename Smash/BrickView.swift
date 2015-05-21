@@ -9,13 +9,28 @@
 import UIKit
 
 class BrickView: UIView {
+    
+    var points = 0
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    var health = 0 {
+    
+        didSet {
+            
+            if points == 0 { points = health * 100}
+            setNeedsDisplay()
+        
+        }
+    
     }
-    */
-
+    
+    override func drawRect(rect: CGRect) {
+        
+        var context = UIGraphicsGetCurrentContext()
+        
+        UIColor(white: 0.0, alpha: 0.3 * CGFloat(health) + 0.1).set()
+        
+        CGContextFillRect(context, rect)
+        
+    }
+    
 }

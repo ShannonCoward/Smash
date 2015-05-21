@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PhR-sc-Ifj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Smash Punkers1.ttf">
+            <string>SMASH-PUNKERS</string>
+            <string>SMASH-PUNKERS</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
+        <scene sceneID="ngs-43-cZd">
+            <objects>
+                <viewController id="pwA-X4-xSz" customClass="StartViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Lw-Et-vgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="gG7-BH-EDO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lcL-xi-J6s">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE2-7u-8Fb">
+                                <rect key="frame" x="212" y="245" width="277" height="61"/>
+                                <fontDescription key="fontDescription" name="SMASH-PUNKERS" family="SMASH PUNKERS" pointSize="27"/>
+                                <state key="normal" title="Tap me BITCH!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startNewGame:" destination="pwA-X4-xSz" eventType="touchUpInside" id="0qH-J2-cd7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SMASH Bitchhhhhhhh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-am-dgz">
+                                <rect key="frame" x="29" y="0.0" width="643" height="189"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="SMASH-PUNKERS" family="SMASH PUNKERS" pointSize="45"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gcp-Qr-YGo"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1r-dq-vbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="62"/>
+        </scene>
+        <!--Level View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelVC" id="vXZ-lx-hvc" customClass="LevelViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -18,8 +66,49 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-dE-JPT">
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqt-wp-VIB" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="12" width="120" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="DdK-la-cbS"/>
+                                            <constraint firstAttribute="width" constant="120" id="wCo-2r-2up"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpT-RI-NOz">
+                                        <rect key="frame" x="562" y="12" width="115" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="H1A-r5-Oe3"/>
+                                            <constraint firstAttribute="width" constant="115" id="WZv-mx-k7X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-JE-etg">
+                                        <rect key="frame" x="270" y="11" width="160" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="hAn-T5-C9k"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="swp-h3-sCB"/>
+                                            <constraint firstAttribute="width" constant="160" id="thE-zW-nKX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Iqt-wp-VIB" secondAttribute="trailing" constant="572" id="2xC-tJ-6Ax"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="topMargin" constant="4" id="6wD-VK-Vz2"/>
+                                    <constraint firstAttribute="trailing" secondItem="TpT-RI-NOz" secondAttribute="trailing" constant="23" id="CaQ-LN-hf1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iqt-wp-VIB" secondAttribute="bottom" constant="12" id="DMI-DM-2Ui"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vb0-dE-JPT" secondAttribute="leading" constant="8" id="EgX-Vz-Z1W"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="12" id="FHP-Gd-Ghd"/>
+                                    <constraint firstAttribute="centerX" secondItem="ISh-JE-etg" secondAttribute="centerX" id="KeF-72-9ak"/>
+                                    <constraint firstItem="TpT-RI-NOz" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="12" id="Pfz-bX-w58"/>
+                                    <constraint firstItem="Iqt-wp-VIB" firstAttribute="leading" secondItem="Vb0-dE-JPT" secondAttribute="leading" constant="8" id="Pzc-4X-3BG"/>
+                                    <constraint firstItem="ISh-JE-etg" firstAttribute="top" secondItem="Vb0-dE-JPT" secondAttribute="top" constant="11" id="geL-HM-iec"/>
                                     <constraint firstAttribute="height" constant="40" id="xQ8-Sx-eZn"/>
                                 </constraints>
                             </view>
@@ -45,12 +134,59 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="700" height="400"/>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="TpT-RI-NOz" id="asN-dk-ViF"/>
                         <outlet property="gameView" destination="vcg-L7-jKr" id="Sdn-au-1gL"/>
+                        <outlet property="headerView" destination="Vb0-dE-JPT" id="12d-RS-vEw"/>
+                        <outlet property="livesView" destination="Iqt-wp-VIB" id="8J2-2k-ROT"/>
+                        <outlet property="topScoreLabel" destination="ISh-JE-etg" id="Y8S-ga-GE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="447" y="106"/>
+=======
+            <point key="canvasLocation" x="1211" y="68"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0pt-el-ky2">
+            <objects>
+                <viewController id="odf-Ap-da8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qw-Bn-dVo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Opo-nd-PgP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g1q-26-uEW">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRd-jJ-J45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="68"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jOW-ON-rwh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="PhR-sc-Ifj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sAR-wW-tDj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pwA-X4-xSz" kind="relationship" relationship="rootViewController" id="VsG-AT-98U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUI-qD-Gq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415" y="62"/>
+>>>>>>> master
         </scene>
     </scenes>
 </document>
